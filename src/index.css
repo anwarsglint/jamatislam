@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Hind Siliguri", "Inter", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --color-islamic-green: #006747;
+  --color-islamic-green-dark: #004d35;
+  --color-gold: #D4AF37;
+  --color-gold-light: #f1e5ac;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-zinc-900 bg-white dark:bg-zinc-950 selection:bg-islamic-green selection:text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-zinc-950/70 backdrop-blur-xl border border-white/20 dark:border-zinc-800/50;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-islamic-green to-emerald-600;
+  }
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+}
+
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans;
+  }
+  
+  .dark body {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+}
+
+.markdown-body {
+  @apply prose prose-slate max-w-none;
+}
+
+.dark .markdown-body {
+  @apply prose-invert;
+}
